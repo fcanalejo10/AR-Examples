@@ -120,6 +120,7 @@ function initialize()
 	
 	mesh1 = new THREE.Mesh( geometry1, material1 );
 	mesh1.position.y = 1;
+	mesh1.position.x = 2;
 	
 	markerRoot1.add( mesh1 );
 	
@@ -140,6 +141,8 @@ function update()
 {
 	if ( markerRoot1.visible )
 		mesh1.rotation.y += 0.01;
+		mesh1.position.z += 2;
+	
 	// update artoolkit on every frame
 	if ( arToolkitSource.ready !== false )
 		arToolkitContext.update( arToolkitSource.domElement );
